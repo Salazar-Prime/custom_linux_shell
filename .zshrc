@@ -76,9 +76,7 @@ timer # timer for exceution
 zsh_reload # faster reload
 last-working-dir # lwd -command
 extract # extract different file types
-#dirhistory # keyboard shortcuts for dir navigation
 alias-finder # to find aliases
-thefuck # error correction
 )
 
 
