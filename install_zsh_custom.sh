@@ -85,4 +85,7 @@ else
 	exit 777
 fi
 
+# set precision of oh-my-zsh timer plugin
+TIMER_PRECISION=2 
+
 echo "######## Restart Terminator ###########"
