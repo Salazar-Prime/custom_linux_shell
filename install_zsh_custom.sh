@@ -2,6 +2,7 @@
 
 # install terminator
 read -p "Install Terminator? " -n 1 -r
+echo 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sudo apt install terminator -y
@@ -17,6 +18,7 @@ fi
 
 # install zsh
 read -p "Install ZSH? " -n 1 -r
+echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sudo apt install zsh -y
@@ -31,6 +33,7 @@ fi
 
 # install oh my zsh
 read -p "Install OH MY ZSH? " -n 1 -r
+echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -54,21 +57,11 @@ else
 	exit 777
 fi
 
-# set zsh as default shell
-chsh -s $(which zsh)
-
-if [ $? -eq 0 ]; then
-	echo "Success - set zsh as default shell"
-else
-	echo "Fail - unable to set zsh as default shell"
-	exit 777
-fi
 
 
 # get my custom configuration files from github
 git clone https://github.com/Salazar-Prime/custom_linux_shell.git
 mv ./custom_linux_shell/terminator_config $HOME/.config/terminator/config # set dracula theme for terminator
-mv ./custom_linux_shell/agnoster.zsh_theme $HOME/.oh-my-zsh/themes/ # set custom agnoster theme
 mv ./custom_linux_shell/.zshrc $HOME/ # set custom zshrc 
 mv ./custom_linux_shell/.bash_aliases $HOME/ # set custom aliases
 rm -rf custom_linux_shell
@@ -81,25 +74,33 @@ else
 fi
 
 
-
-# add zsh syntax highlighting
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-#echo "# syntax highlighting" >> ${ZDOTDIR:-$HOME}/.zshrc
-#echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-
-#if [ $? -eq 0 ]; then
-#	echo "Success - zsh highlighting"
-#else
-#	echo "Fail - unable to set zsh highlighting"
-#	exit 777
-#fi
-
 # source the shell
 source $HOME/.zshrc
 
+# add zsh syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "# syntax highlighting" >> $HOME/.zshrc
+echo "source $PWD/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> $HOME/.zshrc
+
 if [ $? -eq 0 ]; then
-	echo "Success - Welcome to ZSH Shell"
+	echo "Success - zsh highlighting"
 else
-	echo "Fail - something went wrong"
+	echo "Fail - unable to set zsh highlighting"
 	exit 777
 fi
+
+# set zsh as default shell
+chsh -s $(which zsh)
+
+if [ $? -eq 0 ]; then
+	echo "Success - set zsh as default shell"
+else
+	echo "Fail - unable to set zsh as default shell"
+	exit 777
+fi
+
+
+
+
+
+
