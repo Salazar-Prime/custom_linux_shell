@@ -86,6 +86,8 @@ else
 fi
 
 # set precision of oh-my-zsh timer plugin
-TIMER_PRECISION=2 
+echo "# timer plugin threshold" >> $HOME/.zshrc
+echo "#TIMER_THRESHOLD=2" >> $HOME/.zshrc
+
 
 echo "######## Restart Terminator ###########"
