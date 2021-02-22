@@ -1,27 +1,48 @@
-## Pre-requisites
+##### being script #######
+
 # install terminator
-# 
-##### being script
-
-# install zsh
-sudo apt install zsh -y
-
-if [ $? -eq 0 ]; then
+read -p "Install Terminator? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo apt install terminator -y
+    
+    if [ $? -eq 0 ]; then
 	echo "Success - install zsh"
-else
+    else
 	echo "Fail - install zsh"
 	exit 777
+    fi
 fi
 
-# download and install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-if [ $? -eq 0 ]; then
+# install zsh
+read -p "Install ZSH? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo apt install zsh -y
+    
+    if [ $? -eq 0 ]; then
+	echo "Success - install zsh"
+    else
+	echo "Fail - install zsh"
+	exit 777
+    fi
+fi
+
+# install oh my zsh
+read -p "Install OH MY ZSH? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    
+    if [ $? -eq 0 ]; then
 	echo "Success - install oh-my-zsh"
-else
+    else
 	echo "Fail - install oh-my-zsh"
 	exit 777
+    fi
 fi
+
 
 # download and install
 sudo apt install fonts-inconsolata -y
