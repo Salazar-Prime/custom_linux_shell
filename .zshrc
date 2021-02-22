@@ -113,23 +113,12 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 # Colors
-eval `dircolors ~/.dir_colors/dircolors`
+# eval `dircolors ~/.dir_colors/dircolors`
 
 # remove hostnames
 prompt_context() {} 
-
-# syntax highlighting
-source /home/salazar/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-### add to PATH
-#
-# trtexec
-export PATH="$PATH:/usr/src/tensorrt/bin"
-# CUDA bin and lib64
-export PATH="$PATH:/usr/local/cuda/bin"
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64
