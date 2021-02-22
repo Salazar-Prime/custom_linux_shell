@@ -73,10 +73,6 @@ else
 	exit 777
 fi
 
-
-# source the shell
-source $HOME/.zshrc
-
 # add zsh syntax highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 echo "# syntax highlighting" >> $HOME/.zshrc
@@ -89,18 +85,4 @@ else
 	exit 777
 fi
 
-# set zsh as default shell
-chsh -s $(which zsh)
-
-if [ $? -eq 0 ]; then
-	echo "Success - set zsh as default shell"
-else
-	echo "Fail - unable to set zsh as default shell"
-	exit 777
-fi
-
-
-
-
-
-
+echo "######## Restart Terminator ###########"
