@@ -11,4 +11,4 @@ alias rm="rm -vi"
 alias cp="cp -v"
 alias install="sudo apt install "
 alias update="sudo apt update"
-
+alias ll="ls -lah"
