@@ -84,6 +84,7 @@ fi
 
 
 # get my custom configuration files from github
+mkdir ~/.config/terminator
 git clone https://github.com/Salazar-Prime/custom_linux_shell.git
 mv ./custom_linux_shell/terminator_config $HOME/.config/terminator/config # set dracula theme for terminator
 mv ./custom_linux_shell/.zshrc $HOME/ # set custom zshrc 
