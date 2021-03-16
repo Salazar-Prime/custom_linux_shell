@@ -1,5 +1,20 @@
 ##### being script #######
 
+# install curl
+read -p "Install Curl? " -n 1 -r
+echo 
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo apt install curl -y
+    
+    if [ $? -eq 0 ]; then
+	echo "Success - install curl"
+    else
+	echo "Fail - install curl"
+	exit 777
+    fi
+fi
+
 # install terminator
 read -p "Install Terminator? " -n 1 -r
 echo 
@@ -8,9 +23,9 @@ then
     sudo apt install terminator -y
     
     if [ $? -eq 0 ]; then
-	echo "Success - install zsh"
+	echo "Success - install Terminator"
     else
-	echo "Fail - install zsh"
+	echo "Fail - install Terminator"
 	exit 777
     fi
 fi
@@ -44,6 +59,15 @@ then
 	echo "Fail - install oh-my-zsh"
 	exit 777
     fi
+fi
+
+# download and install powerline-fonts
+sudo apt-get install fonts-powerline -y
+if [ $? -eq 0 ]; then
+	echo "Success - install powerline fonts"
+else
+	echo "Fail - install powerline fonts"
+	exit 777
 fi
 
 
