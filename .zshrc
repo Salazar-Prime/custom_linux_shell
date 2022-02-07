@@ -117,8 +117,8 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 prompt_context() {} 
 
 # aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 
