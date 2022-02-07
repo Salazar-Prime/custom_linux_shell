@@ -88,7 +88,7 @@ mkdir ~/.config/terminator
 git clone https://github.com/Salazar-Prime/custom_linux_shell.git
 mv ./custom_linux_shell/terminator_config $HOME/.config/terminator/config # set dracula theme for terminator
 mv ./custom_linux_shell/.zshrc $HOME/ # set custom zshrc 
-mv ./custom_linux_shell/.bash_aliases $HOME/ # set custom aliases
+mv ./custom_linux_shell/.aliases $HOME/ # set custom aliases
 mv ./custom_linux_shell/.vimrc $HOME/ # set custom vim config 
 mv ./custom_linux_shell/.gitconfig $HOME/ # set custom git config 
 rm -rf custom_linux_shell
