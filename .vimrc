@@ -42,6 +42,7 @@ Plugin 'psf/black'                           " Python code formatter: Black
 Plugin 'vim-airline/vim-airline'             " status/tabline
 Plugin 'tpope/vim-commentary'                " cimment in vim
 Plugin 'rhysd/open-pdf.vim'                  " open pdf from vim
+Plugin 'airblade/vim-gitgutter'              " git gutter
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
