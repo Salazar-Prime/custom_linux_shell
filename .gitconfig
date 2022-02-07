@@ -1,0 +1,28 @@
+[init]
+	deafaultBranch = main
+	defaultBranch = main
+
+[user]
+	email = aggarw82@purdue.edu
+	name = Salazar-prime
+[github]
+	user = salazar-prime
+[credential]
+	helper = store	
+[core]
+	autocrlf = input
+	safecrlf = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	type = cat-file -t
+	dump = cat-file -p
+	graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset)\t%C(bold green)%d%C(reset) %C(white)%s%C(reset) - %C(bold white)%an%C(reset) %C(bold yellow)(%ar)%C(reset)' --all
+	hist = log --pretty=format:\"%C(bold blue)%h%C(reset) %C(bold yellow)%ad%C(reset) | %s%C(bold green)%d%C(reset) %C(bold white)[%an]%C(reset)\" --graph --date=short
+[color "status"]
+        added = yellow bold
+        changed = green bold
+        untracked = blue bold
+        deleted = red bold        
