@@ -91,6 +91,7 @@ mv ./custom_linux_shell/.zshrc $HOME/ # set custom zshrc
 mv ./custom_linux_shell/.aliases $HOME/ # set custom aliases
 mv ./custom_linux_shell/.vimrc $HOME/ # set custom vim config 
 mv ./custom_linux_shell/.gitconfig $HOME/ # set custom git config 
+mv ./custom_linux_shell/.tmux.conf $HOME/ # set custom tmux config 
 rm -rf custom_linux_shell
 
 if [ $? -eq 0 ]; then
@@ -116,5 +117,9 @@ fi
 echo "# timer plugin threshold" >> $HOME/.zshrc
 echo "TIMER_THRESHOLD=2" >> $HOME/.zshrc
 
+# install vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# 
+echo "######## Open vim and PluginInstall ###########"
 echo "######## Restart Terminator ###########"
