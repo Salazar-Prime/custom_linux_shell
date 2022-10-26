@@ -1,5 +1,25 @@
 ##### being script #######
 
+# Check sudo access
+read -p "Do you have SUDO access? " -n 1 -r
+echo 
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    if [ $? -eq 0 ]; then
+	echo "Let's Begin"
+    else
+	echo "Can't proceed with the script"
+	echo "Please follow the instructions on the link below"
+	echo "to manually install zsh and oh-my-zsh"
+	echo "Followed by, going through the script manually"
+	echo "to run the commands"
+	echo "Link: https://franklingu.github.io/programming/2016/05/24/setup-oh-my-zsh-on-ubuntu-without-sudo/"
+	exit 777
+    fi
+fi
+
+https://franklingu.github.io/programming/2016/05/24/setup-oh-my-zsh-on-ubuntu-without-sudo/
+
 # install curl
 read -p "Install Curl? " -n 1 -r
 echo 
