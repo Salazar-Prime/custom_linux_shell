@@ -1,6 +1,27 @@
-alias python='python3'
+echo "Install bpython, bat, exa, chezmoi"
+
+## Python Aliases
 alias pip='pip3'
-alias lg='ll -a | grep '
+alias ca="conda activate"
+alias jn="jupyter notebook"
+
+function python {
+  if [ $# -eq 0 ]; then
+    bpython
+  else
+    echo "python3 $*"
+    python3 $*
+  fi
+}
+
+## list directory aliases
+alias lg='exa -lah | grep '
+alias ll="exa -lah"
+alias ls="exa"
+alias sl="ls"
+
+## shell
+alias s='source ~/.zshrc'
 alias hg='history | grep '
 alias hv='history | vim -'
 alias copy='xsel -ib'
@@ -9,8 +30,34 @@ alias vimclipboard='paste | vim -'
 alias mv="mv -v"
 alias rm="rm -v"
 alias cp="cp -v"
+
+## apt aliases
 alias install="sudo apt install "
 alias update="sudo apt update"
-alias ll="ls -lah"
-alias ca="conda activate"
-alias jn="jupyter notebook"
+
+## Notes alias
+function note {
+  echo "date: $(date)" >> $HOME/shellNotes.txt
+  echo "$@" >> $HOME/shellNotes.txt
+  echo "" >> $HOME/shellNotes.txt
+}
+alias notes="cat ~/shellNotes.txt"
+
+## syntax highlighting with pygmentize
+if [[ $OSTYPE == darwin* ]]; then
+  alias cat='bat --paging=never' 
+else
+  alias cat='batcat --paging=never' 
+fi
+  
+
+# trash utility for mac only 
+if [[ $OSTYPE == darwin* ]]; then
+  alias rm="trash -v"
+fi
+
+# create directory and cd into it
+function take {
+  mkdir -p $1
+  cd $1
+}
