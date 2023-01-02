@@ -143,3 +143,16 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # 
 echo "######## Open vim and PluginInstall ###########"
 echo "######## Restart Terminator ###########"
+
+# install other stuff
+if [[ $OSTYPE == darwin* ]]; then
+	brew install bpython
+	brew install bat
+	brew install exa
+	brew install chezmoi
+else
+	sudo apt install bpython -y
+	sudo apt install bat -y
+	sudo apt install exa -y
+	sudo apt install chezmoi -y
+fi
