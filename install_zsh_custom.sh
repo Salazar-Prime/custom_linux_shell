@@ -35,6 +35,21 @@ then
     fi
 fi
 
+# install tmux
+read -p "Install TMUX? " -n 1 -r
+echo 
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo apt install tmux -y
+    
+    if [ $? -eq 0 ]; then
+	echo "Success - install tmux"
+    else
+	echo "Fail - install tmux"
+	exit 777
+    fi
+fi
+
 # install terminator
 read -p "Install Terminator? " -n 1 -r
 echo 
