@@ -121,7 +121,10 @@ fi
 # get my custom configuration files from github
 mkdir ~/.config/terminator
 git clone https://github.com/Salazar-Prime/custom_linux_shell.git
+# for powerline10k theme on oh-my-zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 mv ./custom_linux_shell/terminator_config $HOME/.config/terminator/config # set dracula theme for terminator
+mv ./custom_linux_shell/.p10k.zsh $HOME/ # set config of powerline10k theme
 mv ./custom_linux_shell/.zshrc $HOME/ # set custom zshrc 
 mv ./custom_linux_shell/.aliases $HOME/ # set custom aliases
 mv ./custom_linux_shell/.vimrc $HOME/ # set custom vim config 
@@ -177,4 +180,4 @@ echo "######## Script Ran Succesfully ###########"
 echo "######## Open Tmux and run prefix+I to install TPM ###########"
 echo "######## Open vim and run PluginInstall ###########"
 echo "######## Restart Terminator ###########"
-
+echo "setup powerline10k theme"
