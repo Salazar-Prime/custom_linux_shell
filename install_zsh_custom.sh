@@ -141,8 +141,6 @@ echo "TIMER_THRESHOLD=2" >> $HOME/.zshrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # 
-echo "######## Open vim and PluginInstall ###########"
-echo "######## Restart Terminator ###########"
 
 # install other stuff
 if [[ $OSTYPE == darwin* ]]; then
@@ -156,3 +154,12 @@ else
 	sudo apt install exa -y
 	sudo apt install chezmoi -y
 fi
+
+# add tmux TPM: https://github.com/tmux-plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+echo "######## Script Ran Succesfully ###########"
+echo "######## Open Tmux and run prefix+I to install TPM ###########"
+echo "######## Open vim and run PluginInstall ###########"
+echo "######## Restart Terminator ###########"
+
